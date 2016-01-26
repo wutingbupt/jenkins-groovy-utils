@@ -9,6 +9,18 @@ import jenkins.model.Jenkins
 class JobRelated {
 
     /**
+     * Disable all jenkins jobs
+     */
+    def disableAllJob(){
+        def jobs = Jenkins.instance.getAllItems(AbstractProject.class)
+        jobs.each {
+            println "Disable job " + it.getDisplayName()
+            it.disable()
+            println "Job " + it.getDisplayName() + " status is " + it.isDisabled()
+            println ""
+        }
+    }
+    /**
      * Disables a job based on the name
      *
      * @param name Job name
