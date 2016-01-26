@@ -11,9 +11,13 @@ apply plugin: 'groovy'
 
 repositories {
     jcenter()
+    maven {
+        url "http://repo.jenkins-ci.org/public/"
+    }
 }
 
 dependencies {
     compile 'org.codehaus.groovy:groovy-all:2.4.4'
+    compile 'org.jenkins-ci.main:jenkins-core:1.607-SNAPSHOT'
     testCompile "org.codehaus.groovy:groovy:2.4.4"
 }
